@@ -4,4 +4,11 @@ as
     p_to       in     varchar2  default null
    ,p_amount   in     number    default 0
   );
+
+
+  procedure transfer2(
+    p_to       in     varchar2  default null
+   ,p_amount   in     number    default 0
+  );
+
 end;

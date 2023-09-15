@@ -1,9 +1,42 @@
+## Origin
+
+files for setup are taken from: 
+
+```
+https://github.com/akridge/oracle-apex-docker-stack
+```
+
+from apex official part:
+
+```
+https://github.com/akridge/oracle-apex-docker-stack/tree/main/oracle-apex-offical
+```
+
+
 ## Connection
 
 * Default user: *system* or *sys*
 * Default password: one defined in docker compose
 * Default host: localhost
 * Default database name: xe
+
+### Apex connection
+
+default apex url:
+
+```
+http://localhost:8181
+```
+
+
+```
+| INFO : APEX ADMIN password has configured as 'Welcome_1'.
+| INFO : Use below login credentials to first time login to APEX service:
+|               Workspace: internal
+|               User:      ADMIN
+|               Password:  Welcome_1
+```
+
 
 ## Scripts
 
@@ -31,6 +64,10 @@ create table accounts (
  ,owner    varchar2(30)
  ,balance    number
 )
+;
+
+alter table accounts
+add constraint non_negative_balance_chk check (balance >= 0)
 ;
 
 
